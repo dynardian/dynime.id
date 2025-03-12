@@ -1,0 +1,188 @@
+#anime-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse; /* Episode terbaru di kiri, lama ke kanan */
+    justify-content: flex-start;
+}
+
+.anime-grid {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 10px; /* Jarak antar card */
+}
+
+/* Card styling */
+.card-custom {
+    border: 1px solid black; /* Border hitam */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); /* Efek bayangan */
+    overflow: hidden;
+    margin-bottom: 5px; /* Jarak antar gambar */
+    transition: transform 0.2s ease-in-out;
+}
+
+.card-custom:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.card-custom img {
+    width: 100px; /* Lebar tetap 100px */
+    height: 100px; /* Tinggi 100px di desktop */
+    object-fit: cover; /* Memastikan gambar tetap proporsional */
+    object-position: top; /* Fokus bagian atas gambar */
+}
+
+/* Teks pada gambar */
+.anime-title {
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black, 2px 2px 3px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: yellow;
+    max-width: 90%;
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: left;
+    font-size: clamp(13px, 2vw, 13px);
+}
+
+/* Style untuk tanggal update */
+.anime-date {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: white;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black, 2px 2px 3px rgba(0, 0, 0, 0.8);
+    font-size: clamp(12px, 2vw, 12px);
+}
+
+/* Tombol Navigasi */
+.page-item button {
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.page-item button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.page-item button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 0;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    color: #bbb;
+    line-height: 1.5;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.social-icons img {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 15px;
+    }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-custom img {
+        height: 120px; /* Tinggi gambar di mobile */
+    }
+
+    .col-6 {
+        padding: 1px;
+    }
+}
